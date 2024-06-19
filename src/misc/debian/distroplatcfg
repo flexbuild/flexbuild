@@ -69,6 +69,7 @@ fi
 # vpu hantro daemon
 if [ $soc = imx8mp ]; then
     ln -sf vsidaemon-IMX8MP /usr/bin/vsidaemon
+    rm -f /etc/systemd/system/multi-user.target.wants/firmwared.service
 elif [ $soc = imx8mq ]; then
     ln -sf vsidaemon-IMX8MQ /usr/bin/vsidaemon
 elif [ $soc = imx8mm ]; then

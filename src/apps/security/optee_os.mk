@@ -9,7 +9,7 @@ optee_os:
 	 $(call fbprint_b,"optee_os") && \
 	 $(call repo-mngr,fetch,optee_os,apps/security) && \
 	 if ! `pip3 show -q pycryptodomex`; then \
-	     if [ $(USER) = root ]; then pip3 install --break-system-packages pycryptodomex; else pip3 install pycryptodomex; fi; \
+	     if [ `hostname` = fbdebian ]; then pip3 install --break-system-packages pycryptodomex; else pip3 install pycryptodomex; fi; \
 	 fi && \
 	 \
 	 cd $(SECDIR)/optee_os && \
